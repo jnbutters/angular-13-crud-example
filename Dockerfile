@@ -3,11 +3,11 @@ FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
 
 WORKDIR /usr/share/nginx/html
-COPY /workspace/output/dist/Angular13Crud/ .
+COPY dist/Angular13Crud/ .
 
 EXPOSE 8081
 
-COPY /workspace/output/entryPoint.sh /
+COPY ./entryPoint.sh /
 RUN chmod +x /entryPoint.sh
 ENTRYPOINT ["sh","/entryPoint.sh"]
 
